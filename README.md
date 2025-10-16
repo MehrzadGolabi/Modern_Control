@@ -1,4 +1,4 @@
-# MATLAB Teaching Series for Modern Control Theory
+# MATLAB for Modern Control Theory
 
 A comprehensive educational series of MATLAB scripts designed to teach modern control theory from mathematical foundations to complete observer-based controller implementation.
 
@@ -27,7 +27,7 @@ By completing this series, you will be able to:
 - Implement complete observer-based control systems
 
 
-## 🔧 Requirements
+##  Requirements
 
 ### Software
 - **MATLAB**: R2025b or later (scripts may work on R2020a+)
@@ -46,30 +46,7 @@ By completing this series, you will be able to:
   - Plotting and visualization
   - Matrix operations
 
-##  How to Use This Series
-
-### Recommended Learning Path
-
-The seasons are designed to be completed **sequentially**:
-
-```
-S01 (Foundations) → S02 (Modeling) → S03 (Structure) → S04 (Control)
-```
-
-### For Each Season:
-
-1. **Read the header** - Learning outcomes and prerequisites
-2. **Run each section** - Execute code sequentially (click "Run Section" in MATLAB)
-3. **Study the output** - Observe numerical results and plots
-4. **Read the explanations** - Understand theory behind implementation
-5. **Try the exercises** - Practice problems at the end
-6. **Experiment** - Modify parameters and observe effects
-
-
-
-
-
-## 🔑 Key MATLAB Functions by Season
+## Key MATLAB Functions by Season
 
 ### S01 - Mathematical Foundations
 `eig`, `inv`, `det`, `rank`, `trace`, `norm`, `null`, `orth`, `poly`, `jordan`, `expm`, `linsolve`
@@ -109,15 +86,16 @@ All modern control theory concepts are covered comprehensively:
 
 
 
-## 🤝 Support and Feedback
+##  Support and Feedback
 
 ### Getting Help
 - Review previous seasons if concepts are unclear
 - Check MATLAB documentation (`help function_name`)
 - Experiment with simpler examples first
 - Use MATLAB's debugging tools (`dbstop`, breakpoints)
+- email me at mehrzadgolabi@gmail.com or @mehrzad_golabi on telegram
 
-### Reporting Issues
+## Reporting Issues
 If you find errors or have suggestions:
 - Document the issue (script name, section, error message)
 - Provide MATLAB version and toolbox versions
@@ -127,7 +105,7 @@ If you find errors or have suggestions:
 ## Acknowledgments
 
 This series integrates concepts from:
-- Modern control theory literature
+- Modern control theory literature and Dr. Nouri Manzar's Slides
 - MATLAB Control System documentation
-- Feedback from fellow electrical engineering students (Thanks to A. Feizbakhsh and S. Aligholizade for the first drafts and feedbacks)
-- A. Moradi Amani, Negahi be Karbord-e Narmafzar MATLAB dar Kontrol-e Modarn (نگاهی به کاربرد نرم افزار متلب در کنترل مدرن), appendix to Modarn Control Fundamentals, by A. Khaki Sedigh.
+- Feedback from teaching assistant colleagues. Special thanks to A. Feizbakhsh and S. Aligholizade for preparing the first draft of this course and providing valuable feedback.
+- A. Moradi Amani, Negahi be Karbord-e Narmafzar MATLAB dar Control-e Modarn (نگاهی به کاربرد نرم افزار متلب در کنترل مدرن), appendix to Modarn Control Fundamentals, by A. Khaki Sedigh.
