@@ -13,6 +13,7 @@ This teaching series consists of **5 seasons** (modules), each building upon the
 | **S03** | Controllability, Observability & Realization | Rank tests, PBH test, gramians, Kalman decomposition, canonical forms, minimal realization | `S03_Controllability_Observability_Realization.mlx` |
 | **S04** | Stability, Feedback & LQR | Lyapunov theory, BIBO stability, pole placement, LQR, Riccati equations, digital control | `S04_Stability_Feedback_LQR.mlx` |
 
+Check [INDEX.md](INDEX.md) for more details.
 
 ##  Learning Objectives
 
