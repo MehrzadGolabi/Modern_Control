@@ -4,7 +4,7 @@ A comprehensive educational series of MATLAB scripts designed to teach modern co
 
 ##  Series Overview
 
-This teaching series consists of **5 seasons** (modules), each building upon the previous one to develop a complete understanding of modern control theory and its implementation in MATLAB.
+This teaching series consists of **4 seasons** (modules), each building upon the previous one to develop a complete understanding of modern control theory and its implementation in MATLAB.
 
 | Season | Title | Topics | Scripts |
 |:------:|:------|:-------|:--------|
@@ -60,19 +60,6 @@ By completing this series, you will be able to:
 
 ### S04 - Stability & Feedback
 `lyap`, `dlyap`, `chol`, `place`, `acker`, `lqr`, `dlqr`, `care`, `dare`, `pole`
-
-
-## 📊 Concept Coverage
-
-All modern control theory concepts are covered comprehensively:
-
-| Category | Concepts | MATLAB Tools |
-|:---------|:---------|:-------------|
-| **Math Foundation** | Eigenvalues, similarity, norms, Jordan form | `eig`, `norm`, `jordan`, `expm` |
-| **System Modeling** | State-space, transfer functions, linearization | `ss`, `tf`, `jacobian`, `c2d` |
-| **Structural Properties** | Controllability, observability, realization | `ctrb`, `obsv`, `canon`, `minreal` |
-| **Stability** | Eigenvalue, Lyapunov, BIBO | `eig`, `lyap`, `pole` |
-| **Control Design** | Pole placement, LQR, digital control | `place`, `lqr`, `dlqr`, `care` |
 
 ## Related Resources
 
