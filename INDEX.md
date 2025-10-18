@@ -270,10 +270,10 @@ Below is the complete mapping of **all required concepts** from the syllabus:
 
 **Navigation:**
 - [Back to README](README.md)
-- [Season 1: Mathematical Foundations](S01_Mathematical_Foundations.mlx)
-- [Season 2: State-Space Modeling](S02_StateSpace_Modeling_Linearization.mlx)
-- [Season 3: Controllability & Observability](S03_Controllability_Observability_Realization.mlx)
-- [Season 4: Stability & Control](S04_Stability_Feedback_LQR.mlx)
+- [Season 1: Mathematical Foundations](/Matlab%20Live%20Script%20Files/S01_Mathematical_Foundations.mlx)
+- [Season 2: State-Space Modeling](/Matlab%20Live%20Script%20Files/S02_StateSpace_Modeling_Linearization.mlx)
+- [Season 3: Controllability & Observability](/Matlab%20Live%20Script%20Files/S03_Controllability_Observability_Realization.mlx)
+- [Season 4: Stability & Control](/Matlab%20Live%20Script%20Files/S04_Stability_Feedback_LQR.mlx)
 
 ---
 
