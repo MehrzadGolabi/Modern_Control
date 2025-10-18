@@ -36,8 +36,8 @@ This document provides a comprehensive mapping of modern control theory concepts
 | `d2c` | Discrete to continuous | S02 §2.6 | S04 §4.10 |
 | `step` | Step response | S02 §2.3 | Throughout |
 | `impulse` | Impulse response | S02 §2.3 | - |
-| `initial` | Initial condition response | S02 §2.3 | S05 §5.2 |
-| `lsim` | Arbitrary input response | S02 §2.3 | S05 §5.2 |
+| `initial` | Initial condition response | S02 §2.3 | - |
+| `lsim` | Arbitrary input response | S02 §2.3 | - |
 | `ode45` | Numerical ODE solver | S02 §2.4 | - |
 | `jacobian` | Symbolic Jacobian | S02 §2.8 | S02 §2.9 |
 | `laplace` | Laplace transform | S02 §2.5 | - |
@@ -45,8 +45,8 @@ This document provides a comprehensive mapping of modern control theory concepts
 | `subs` | Symbolic substitution | S02 §2.8 | - |
 | `stepinfo` | Step response metrics | S02 §2.3 | - |
 | `residue` | Partial fraction expansion | S02 §2.5 | - |
-| `ctrb` | Controllability matrix | S03 §3.1 | S05 §5.2 |
-| `obsv` | Observability matrix | S03 §3.2 | S05 §5.2 |
+| `ctrb` | Controllability matrix | S03 §3.1 | - |
+| `obsv` | Observability matrix | S03 §3.2 | - |
 | `gram` | Controllability/observability gramians | S03 §3.4 | - |
 | `canon` | Canonical forms | S03 §3.6 | - |
 | `ss2ss` | State transformation | S03 §3.7 | - |
@@ -55,12 +55,12 @@ This document provides a comprehensive mapping of modern control theory concepts
 | `lyap` | Continuous Lyapunov equation | S04 §4.2 | - |
 | `dlyap` | Discrete Lyapunov equation | S04 §4.4 | - |
 | `chol` | Cholesky decomposition | S04 §4.3 | - |
-| `place` | Pole placement | S04 §4.6 | S05 §5.2 |
+| `place` | Pole placement | S04 §4.6 | - |
 | `acker` | Ackermann's formula | S04 §4.7 | - |
-| `lqr` | Linear quadratic regulator | S04 §4.8 | S05 §5.7 |
+| `lqr` | Linear quadratic regulator | S04 §4.8 | - |
 | `dlqr` | Discrete LQR | S04 §4.10 | - |
 | `care` | Continuous Riccati equation | S04 §4.9 | - |
-| `pole` | System poles | S04 §4.5 | - |- |
+| `pole` | System poles | S04 §4.5 | - |
 
 ---
 
@@ -194,9 +194,7 @@ Below is the complete mapping of **all required concepts** from the syllabus:
 | **Pole placement** | `place`, `acker` | S04 | §4.6, §4.7 | Eigenvalue assignment |
 | **LQR optimal control** | `lqr` | S04 | §4.8 | Minimize J with Q, R |
 | **Riccati equation** | `care`, `dare` | S04 | §4.9 | Algebraic Riccati equation |
-| **Observer design** | `place` (dual), `lqe` | S05 | §5.2, §5.5 | Full-order and Kalman |
-| **Reduced-order observer** | Theory | S05 | §5.6 | Partial state estimation |
-| **Simulation** | `ode45`, `lsim`, `sim` | S02, S05 | §2.4, §5.2 | Simulate control systems |
+| **Simulation** | `ode45`, `lsim`, `sim` | S02 | §2.4 | Simulate control systems |
 | **Discretization** | `c2d`, `d2c` | S02, S04 | §2.6, §4.10 | ZOH, Tustin, matched |
 | **Digital control** | `dlqr`, `c2d` | S04 | §4.10 | Discrete controller design |
 | **Model realization** | `tf2ss`, `minreal`, `canon` | S03 | §3.6, §3.9 | Different realizations |
@@ -218,36 +216,7 @@ Below is the complete mapping of **all required concepts** from the syllabus:
 | Simplify a model | S03 | `minreal`, `balreal` | Remove extra states |
 | Check stability | S04 | `eig`, `lyap` | Multiple methods |
 | Design controller | S04 | `place`, `lqr` | Pole placement or optimal |
-| Design observer | S05 | `place`, `lqe` | Standard or Kalman |
-| Combine controller+observer | S05 | `reg`, `estim` | Output feedback |
 | Implement digitally | S04 | `c2d`, `dlqr` | Discretize for computer |
-
----
-
-## Example Workflows
-
-### Workflow 1: Full-State Feedback Controller
-
-1. **Model system** (S02 §2.1): Create state-space `ss(A,B,C,D)`
-2. **Check controllability** (S03 §3.1): `rank(ctrb(A,B))`
-3. **Design controller** (S04 §4.6): `K = place(A,B,poles)` or `K = lqr(A,B,Q,R)`
-4. **Simulate** (S02 §2.3): `sys_cl = ss(A-B*K, B, C, 0); step(sys_cl)`
-
-### Workflow 2: Observer-Based Controller
-
-1. **Model system** (S02 §2.1): `sys = ss(A,B,C,D)`
-2. **Check controllability & observability** (S03 §3.1-3.2)
-3. **Design controller** (S04 §4.6): `K = place(A,B,poles_ctrl)`
-4. **Design observer** (S05 §5.2): `L = place(A',C',poles_obs)'`
-5. **Verify separation** (S05 §5.7): Check combined eigenvalues
-6. **Implement** (S05 §5.8): `[sys_comp,~] = reg(sys,K,L)`
-
-### Workflow 3: Digital Controller Implementation
-
-1. **Design continuous controller** (S04 §4.8): `K = lqr(A,B,Q,R)`
-2. **Discretize system** (S04 §4.10): `sys_d = c2d(sys,Ts,'zoh')`
-3. **Design digital controller** (S04 §4.10): `K_d = dlqr(A_d,B_d,Q,R)`
-4. **Implement and test** (S02 §2.3): Simulate with `lsim`
 
 ---
 
@@ -263,8 +232,6 @@ Below is the complete mapping of **all required concepts** from the syllabus:
 | `place(A,B,p)` | Pole placement | `K = place(A,B,poles)` | S04 §4.6 |
 | `lqr(A,B,Q,R)` | LQR controller | `[K,S,e] = lqr(A,B,Q,R)` | S04 §4.8 |
 | `lyap(A,Q)` | Solve Lyapunov eqn | `P = lyap(A',Q)` | S04 §4.2 |
-| `lqe(A,G,C,Qn,Rn)` | Kalman filter | `L = lqe(A,G,C,Qn,Rn)` | S05 §5.5 |
-| `reg(sys,K,L)` | Controller+observer | `[comp,~] = reg(sys,K,L)` | S05 §5.8 |
 
 ---
 
