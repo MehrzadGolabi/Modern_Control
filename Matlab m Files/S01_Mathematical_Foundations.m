@@ -587,10 +587,3 @@ fprintf('\n');
 % * Controllability and observability analysis (Season 3)
 % * Stability analysis using Lyapunov theory (Season 5)
 % * Observer and controller design (Season 6)
-%% Exercises
-%% 
-% # Create a 4×4 random matrix and compute all its properties
-% # Find the null space of a rank-2 matrix with 3 columns
-% # Verify that similar matrices have identical eigenvalues
-% # Compute exp(At) for t=0, 1, 2, 3 and observe the pattern
-% # Transform a system matrix to Jordan form and interpret the blocks

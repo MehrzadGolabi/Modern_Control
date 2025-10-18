@@ -630,10 +630,3 @@ fprintf('Difference in K: %.2e\n\n', norm(K_care - K_lqr_comp));
 % * R matrix: penalizes control effort (larger = less aggressive)
 % * Pole placement: direct control over dynamics
 % * LQR: optimal balance between performance and effort
-%% 
-% *Next Steps:*
-% 
-% State feedback requires full state measurement. For practical systems:
-%% 
-% * Design observers to estimate unmeasured states (Season 5)
-% * Apply separation principle for combined observer-controller
