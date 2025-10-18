@@ -81,7 +81,7 @@ By completing this series, you will be able to:
 - Check MATLAB documentation (`help function_name`)
 - Experiment with simpler examples first
 - Use MATLAB's debugging tools (`dbstop`, breakpoints)
-- email me at mehrzadgolabi@gmail.com or @mehrzad_golabi on telegram
+- Email me at mehrzadgolabi@gmail.com or @mehrzad_golabi on telegram
 
 ## Reporting Issues
 If you find errors or have suggestions:
