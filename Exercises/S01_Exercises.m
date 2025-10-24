@@ -1,14 +1,17 @@
 %% Season 1 Exercises: Mathematical Foundations for Modern Control
 close all; clear; clc;
 
-% Put the last 2 digits of your student number in the RNG function:
-rng(0);
+% Enter your FULL student number below (e.g., 400249123)
+STUDENT_NUMBER = 0;  % REPLACE THIS WITH YOUR STUDENT NUMBER
+rng(STUDENT_NUMBER);
+
+% Note: Your values will differ based on your STUDENT_NUMBER
 
 %%% Name :
 %%% Student number =
 
 %% Exercise 1.1: Basic Matrix Operations
-% *Problem 1.1.1:* 
+% 1. *Problem 1.1.1:* 
 % Create two 3×3 matrices A and B with random integers (using randi) between 1 and 10. Compute:
 
 % (a) A + B
@@ -20,7 +23,7 @@ rng(0);
 
 
 %% 
-% *Problem 1.1.2:*
+% 2. *Problem 1.1.2:*
 % Given vectors u = [1; 2; 3] and v = [4; 5; 6], compute:
 % (a) dot product as matrix multiplication
 % (b) outer product
@@ -30,7 +33,7 @@ rng(0);
 
 
 %% 
-% *Problem 1.1.3:* 
+% 3. *Problem 1.1.3:* 
 % Create a 4×4 magic square using the magic() function.
 % Extract:
 % (a) The 2×2 submatrix in the top-left corner
@@ -42,7 +45,7 @@ rng(0);
 
 
 %% Exercise 1.2: Matrix Properties
-% *Problem 1.2.1:* 
+% 4. *Problem 1.2.1:* 
 % Create a random 5×5 matrix A. 
 % Compute and verify:
 % (a) determinant
@@ -55,7 +58,7 @@ rng(0);
 
 
 %% 
-% *Problem 1.2.2:* Create a singular (non-invertible) 3×3 matrix.
+% 5. *Problem 1.2.2:* Create a singular (non-invertible) 3×3 matrix.
 % (a) Verify that its determinant is zero
 % (b) Show that it has at least one zero eigenvalue
 % (c) Find its null space dimension
@@ -64,7 +67,7 @@ rng(0);
 
 
 %% Exercise 1.3: Matrix Norms
-% *Problem 1.3.1:*
+% 6. *Problem 1.3.1:*
 % For matrix A = [1 -2 3; 4 5 -6; -7 8 9]:
 % (a) Compute all four norms: 1-norm, 2-norm, inf-norm, Frobenius norm
 % (b) Manually verify the 1-norm (maximum absolute column sum)
@@ -74,7 +77,7 @@ rng(0);
 
 
 %% 
-% *Problem 1.3.2:*
+% 7. *Problem 1.3.2:*
 % Create two random 3×3 matrices A and B.
 % (a) Verify the triangle inequality: ||A + B||_F ≤ ||A||_F + ||B||_F
 % (b) Verify submultiplicativity: ||A*B||_2 ≤ ||A||_2 * ||B||_2
@@ -83,18 +86,18 @@ rng(0);
 
 
 %% Exercise 1.4: Triangular Matrices
-% *Problem 1.4.1:* 
+% 8. *Problem 1.4.1:* 
 % Create a random 4×4 matrix M.
 % (a) Extract upper triangular part U
 % (b) Extract lower triangular part L
 % (c) Extract diagonal D
-% (d) Verify that M = U + L - diag(diag(M))
+% (d) Verify that M = U + L - diagonal(diagonal(M))
 
 % Your code here:
 
 
 %% 
-% *Problem 1.4.2:*
+% 9. *Problem 1.4.2:*
 % Solve the upper triangular system Ux = b where:
 % U = [4 3 2 1; 0 3 2 1; 0 0 2 1; 0 0 0 1]
 % b = [10; 6; 3; 1]
@@ -107,7 +110,7 @@ rng(0);
 
 
 %% Exercise 1.5: Null Space and Orthogonality
-% *Problem 1.5.1:*
+% 10. *Problem 1.5.1:*
 % For matrix A = [1 2 3; 2 4 6; 1 2 3]:
 % (a) Find the rank of A
 % (b) Find a basis for the null space
@@ -118,7 +121,7 @@ rng(0);
 
 
 %% 
-% *Problem 1.5.2:*
+% 11. *Problem 1.5.2:*
 % Create an orthonormal basis for the column space of:
 % A = [1 2; 2 1; 2 2; 1 0]
 % (a) Use orth() function
@@ -129,7 +132,7 @@ rng(0);
 
 
 %% 
-% *Problem 1.5.3:*
+% 12. *Problem 1.5.3:*
 % Gram-Schmidt Orthogonalization
 % Given vectors: v1 = [1; 1; 0], v2 = [1; 0; 1], v3 = [0; 1; 1]
 % (a) Apply Gram-Schmidt process to create orthonormal basis
@@ -140,7 +143,7 @@ rng(0);
 
 
 %% Exercise 1.6: Solving Linear Systems
-% *Problem 1.6.1:* 
+% 13. *Problem 1.6.1:* 
 % Solve the system Ax = b where:
 % A = [2 -1 1; 1 1 -1; 1 -1 2]
 % b = [6; 0; 3]
@@ -153,7 +156,7 @@ rng(0);
 
 
 %% Exercise 1.7: Eigenvalues and Eigenvectors
-% *Problem 1.7.1:* For matrix A = [4 1; 2 3]:
+% 14. *Problem 1.7.1:* For matrix A = [4 1; 2 3]:
 % (a) Compute eigenvalues and eigenvectors using [V,D] = eig(A)
 % (b) Verify that A*V = V*D
 % (c) For each eigenvector v_i and eigenvalue λ_i, verify A*v_i = λ_i*v_i
@@ -163,19 +166,17 @@ rng(0);
 
 
 %% 
-% *Problem 1.7.2:* 
+% 15. *Problem 1.7.2:* 
 % Investigate the relationship between matrix properties:
 % Create A = [6 -1 0; -1 5 -1; 0 -1 4]
-% (a) Verify: trace(A) = sum of eigenvalues
-% (b) Verify: det(A) = product of eigenvalues
-% (c) Find characteristic polynomial using poly(A)
-% (d) Verify polynomial roots equal eigenvalues
+% (a) Find characteristic polynomial using poly(A)
+% (b) Verify polynomial roots equal eigenvalues
 
 % Your code here:
 
 
 %% Exercise 1.8: Similarity Transformations
-% *Problem 1.8.1:* 
+% 16. *Problem 1.8.1:* 
 % For matrix A = [1 2; 3 4], transformation T = [2 1; 1 1]:
 % (a) Compute B = inv(T)*A*T
 % (b) Verify that A and B have the same eigenvalues
@@ -186,7 +187,7 @@ rng(0);
 
 
 %% 
-% *Problem 1.8.2:* 
+% 17. *Problem 1.8.2:* 
 % Diagonalization
 % For matrix A = [5 4; 1 2]:
 % (a) Find eigenvalues and eigenvectors
@@ -199,8 +200,8 @@ rng(0);
 
 
 %% Exercise 1.9: Jordan Normal Form
-% *Problem 1.9.1:* 
-% For defective matrix A = [3 1 0; 0 3 1; 0 0 3]:
+% 18. *Problem 1.9.1:* 
+% For matrix A = [3 1 0; 0 3 1; 0 0 3]:
 % (a) Find eigenvalues - what do you notice?
 % (b) Compute Jordan form using [T,J] = jordan(A)
 % (c) Verify A = T*J*inv(T)
@@ -210,7 +211,7 @@ rng(0);
 
 
 %% 
-% *Problem 1.9.2:* 
+% 19. *Problem 1.9.2:* 
 % For matrix A = [2 1 0 0; 0 2 0 0; 0 0 3 1; 0 0 0 3]:
 % (a) Compute Jordan form
 % (b) Identify the Jordan blocks
@@ -219,7 +220,7 @@ rng(0);
 
 
 %% Exercise 1.10: Matrix Exponential
-% *Problem 1.10.1:* 
+% 20. *Problem 1.10.1:* 
 % For A = [0 1; -1 0] (represents harmonic oscillator):
 % (a) Compute exp(A*t) for t = 0, π/2, π, 2π
 % (b) What pattern do you observe?
@@ -230,7 +231,7 @@ rng(0);
 
 
 %% 
-% *Problem 1.10.2:* 
+% 21. *Problem 1.10.2:* 
 % For diagonal matrix D = diag([λ1, λ2, λ3]):
 % (a) Create D with λ = [-1, -2, -3]
 % (b) Compute exp(D*t) for various t values
@@ -241,7 +242,7 @@ rng(0);
 
 
 %% 
-% *Problem 1.10.3:* Using matrix exponential to solve initial value problem:
+% 22. *Problem 1.10.3:* Using matrix exponential to solve initial value problem:
 % For A = [-1 2; -2 -1], x(0) = [1; 1]:
 % (a) Compute state transition matrix Φ(t) = exp(A*t)
 % (b) Solution is x(t) = Φ(t)*x(0), compute for t = 0:0.1:5
@@ -253,7 +254,7 @@ rng(0);
 
 
 %% Exercise 1.11: Comprehensive Problems
-% *Problem 1.11.1:* 
+% 23. *Problem 1.11.1:* 
 % Matrix Analysis Challenge
 % Given A = [4 2 1; 0 3 2; 0 0 2]:
 % Perform complete analysis:
@@ -268,7 +269,7 @@ rng(0);
 
 
 %% 
-% *Problem 1.11.4:* 
+% 24. *Problem 1.11.4:* 
 % Numerical Stability Investigation
 % Create a Hilbert matrix: H = hilb(n) for n = 5, 10, 15
 % (a) Compute condition numbers for each size
@@ -281,14 +282,14 @@ rng(0);
 
 
 %% 
-% *Problem 1.11.5:* 
+% 25. *Problem 1.11.5:* 
 % Matrix Functions Comparison
 % For A = [1 2; 3 4]:
 % (a) Compute exp(A) using expm()
 % (b) Compute exp(A) using diagonalization: exp(A) = T*exp(D)*inv(T)
 % (c) Compute exp(A) using Taylor series (first 20 terms)
 % (d) Compare all three methods - do they agree?
-% (e) Which method is most accurate? Most efficient? (calculate the computation time)
+% (e) Which method is most accurate? Most efficient? (calculate the computation time hint: use tic/toc or timeit)
 
 % Your code here:
 

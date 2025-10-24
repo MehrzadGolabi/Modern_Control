@@ -1,14 +1,15 @@
 %% Season 2 Exercises: State-Space Modeling and Linearization
 close all; clear; clc;
 
-% Put the last 2 digits of your student number in the RNG function:
-rng(0);
+% Enter your FULL student number below (e.g., 400249049)
+STUDENT_NUMBER = 0;  % REPLACE THIS WITH YOUR STUDENT NUMBER
+rng(STUDENT_NUMBER);
 
 %%% Name :
 %%% Student number =
 
 %% Exercise 2.1: From Differential Equations to State-Space
-% *Problem 2.1.1:*
+% 1. *Problem 2.1.1:*
 % Convert the following second-order ODE to state-space form:
 % ẍ + 4ẋ + 3x = 2u
 % Choose state variables: x₁ = x, x₂ = ẋ
@@ -21,7 +22,7 @@ rng(0);
 
 
 %% 
-% *Problem 2.1.2:*
+% 2. *Problem 2.1.2:*
 % RLC Circuit: L*d²i/dt² + R*di/dt + (1/C)*i = dv/dt
 % Given: L = 1 H, R = 2 Ω, C = 0.5 F
 % (a) Define state variables: x₁ = i, x₂ = di/dt
@@ -33,7 +34,7 @@ rng(0);
 
 
 %% 
-% *Problem 2.1.3:*
+% 3. *Problem 2.1.3:*
 % Mass-Spring-Damper with two masses:
 % m₁ẍ₁ + c₁ẋ₁ + k₁x₁ + k₂(x₁-x₂) = F
 % m₂ẍ₂ + c₂ẋ₂ + k₂(x₂-x₁) = 0
@@ -47,7 +48,7 @@ rng(0);
 
 
 %% Exercise 2.2: State-Space and Transfer Function Conversions
-% *Problem 2.2.1:*
+% 4. *Problem 2.2.1:*
 % Given transfer function: H(s) = (s + 2)/(s² + 3s + 2)
 % (a) Create transfer function using tf()
 % (b) Convert to state-space using tf2ss()
@@ -58,7 +59,7 @@ rng(0);
 
 
 %% 
-% *Problem 2.2.2:*
+% 5. *Problem 2.2.2:*
 % Given state-space system:
 % A = [0 1; -5 -6], B = [0; 1], C = [1 1], D = 0
 % (a) Create state-space object
@@ -70,7 +71,7 @@ rng(0);
 
 
 %% 
-% *Problem 2.2.3:*
+% 6. *Problem 2.2.3:*
 % Create a third-order system:
 % H(s) = (2s + 5)/(s³ + 6s² + 11s + 6)
 % (a) Create transfer function
@@ -82,7 +83,7 @@ rng(0);
 
 
 %% Exercise 2.3: System Response Analysis
-% *Problem 2.3.1:*
+% 7. *Problem 2.3.1:*
 % For the system: A = [0 1; -4 -5], B = [0; 1], C = [1 0], D = 0
 % (a) Compute and plot step response for 10 seconds
 % (b) Compute and plot impulse response for 10 seconds
@@ -93,7 +94,7 @@ rng(0);
 
 
 %% 
-% *Problem 2.3.2:*
+% 8. *Problem 2.3.2:*
 % For the same system as above:
 % (a) Simulate initial condition response with x(0) = [2; -1]
 % (b) Plot the response for 8 seconds
@@ -104,7 +105,7 @@ rng(0);
 
 
 %% 
-% *Problem 2.3.3:*
+% 9. *Problem 2.3.3:*
 % Custom input response:
 % Use system: A = [-1 0; 0 -2], B = [1; 1], C = [1 1], D = 0
 % (a) Create time vector t = 0:0.01:10
@@ -116,7 +117,7 @@ rng(0);
 
 
 %% Exercise 2.4: State Transition and Matrix Exponential
-% *Problem 2.4.1:*
+% 10. *Problem 2.4.1:*
 % For matrix A = [0 1; -3 -4]:
 % (a) Compute state transition matrix Φ(t) = exp(A*t) at t = 1, 2, 5
 % (b) With x(0) = [1; 0], compute x(t) at these times
@@ -127,7 +128,7 @@ rng(0);
 
 
 %% 
-% *Problem 2.4.2:*
+% 11. *Problem 2.4.2:*
 % Compare matrix exponential with ODE solver:
 % A = [-1 2; -2 -3], x(0) = [2; 1]
 % (a) Compute trajectory using expm() for t = 0:0.1:5
@@ -139,7 +140,7 @@ rng(0);
 
 
 %% Exercise 2.5: Laplace Transforms
-% *Problem 2.5.1:*
+% 12. *Problem 2.5.1:*
 % Compute Laplace transforms of:
 % (a) f₁(t) = t*exp(-2*t)
 % (b) f₂(t) = sin(3*t)*exp(-t)
@@ -150,7 +151,7 @@ rng(0);
 
 
 %% 
-% *Problem 2.5.2:*
+% 13. *Problem 2.5.2:*
 % Given F(s) = (3s + 5)/(s² + 4s + 3)
 % (a) Use partial fraction expansion with residue()
 % (b) Find residues, poles, and direct term
@@ -161,7 +162,7 @@ rng(0);
 
 
 %% Exercise 2.6: Equilibrium Points and Stability
-% *Problem 2.6.1:*
+% 14. *Problem 2.6.1:*
 % Van der Pol oscillator: ẍ - μ(1-x²)ẋ + x = 0
 % With μ = 1, states: x₁ = x, x₂ = ẋ
 % (a) Write the nonlinear state equations
@@ -173,7 +174,7 @@ rng(0);
 
 
 %% 
-% *Problem 2.6.2:*
+% 15. *Problem 2.6.2:*
 % Predator-Prey model:
 % ẋ = ax - bxy, 
 % ẏ = -cy + dxy
@@ -187,7 +188,7 @@ rng(0);
 
 
 %% Exercise 2.7: Jacobian Linearization
-% *Problem 2.7.1:*
+% 16. *Problem 2.7.1:*
 % For pendulum: θ̈ + (g/L)sin(θ) + b*θ̇ = u
 % Use g=9.81, L=1, b=0.5
 % States: x = [θ; θ̇], input: u = torque
@@ -201,7 +202,7 @@ rng(0);
 
 
 %% 
-% *Problem 2.7.2:*
+% 17. *Problem 2.7.2:*
 % Continue with pendulum from 2.7.1:
 % (a) Linearize at θ = π (inverted position)
 % (b) Compute A and B at this equilibrium
@@ -212,7 +213,7 @@ rng(0);
 
 
 %% 
-% *Problem 2.7.3:*
+% 18. *Problem 2.7.3:*
 % Nonlinear system:
 % ẋ₁ = x₂
 % ẋ₂ = -x₁ + x₁³ - 0.1*x₂ + u
@@ -225,7 +226,7 @@ rng(0);
 
 
 %% Exercise 2.8: Multi-State Nonlinear Systems
-% *Problem 2.8.1:*
+% 19. *Problem 2.8.1:*
 % Three-state system:
 % ẋ₁ = x₂
 % ẋ₂ = -x₁ - 0.5*x₂ + 2*sin(x₃)
@@ -240,7 +241,7 @@ rng(0);
 
 
 %% 
-% *Problem 2.8.2:*
+% 20. *Problem 2.8.2:*
 % For the system in 2.8.1:
 % (a) Create state-space model using linearized A, B
 % (b) Find eigenvalues of A
@@ -251,7 +252,7 @@ rng(0);
 
 
 %% Exercise 2.10: Physical Systems Modeling
-% DC Motor model:
+% 21. DC Motor model:
 % Electrical equation: L*di/dt = -R*i - Kb*ω + V
 % Mechanical equation: J*dω/dt = Kt*i - B*ω - τ_load
 % Parameters: R=1Ω, L=0.5H, Kt=0.01 N·m/A, Kb=0.01 V·s/rad, J=0.01 kg·m², B=0.1 N·m·s

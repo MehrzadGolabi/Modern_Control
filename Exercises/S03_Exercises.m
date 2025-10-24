@@ -1,14 +1,15 @@
 %% Season 3 Exercises: Controllability, Observability, and Realization
 close all; clear; clc;
 
-% Put the last 2 digits of your student number in the RNG function:
-rng(0);
+% Enter your FULL student number below (e.g., 400249049)
+STUDENT_NUMBER = 0;  % REPLACE THIS WITH YOUR STUDENT NUMBER
+rng(STUDENT_NUMBER);
 
 %%% Name :
 %%% Student number =
 
 %% Exercise 3.1: Controllability - Rank Test
-% *Problem 3.1.1:*
+% 1. *Problem 3.1.1:*
 % Test controllability using rank criterion:
 % A = [0 1; -2 -3], B = [0; 1]
 % (a) Compute controllability matrix C = [B AB]
@@ -20,7 +21,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.1.2:*
+% 2. *Problem 3.1.2:*
 % For the system: A = [1 2; 0 3], B = [1; 2]
 % (a) Compute controllability matrix manually
 % (b) Check rank - is it controllable?
@@ -31,7 +32,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.1.3:*
+% 3. *Problem 3.1.3:*
 % Third-order system: A = [0 1 0; 0 0 1; -6 -11 -6], B = [0; 0; 1]
 % (a) Compute C = [B AB A²B]
 % (b) Find rank of C
@@ -42,7 +43,7 @@ rng(0);
 
 
 %% Exercise 3.2: Observability - Rank Test
-% *Problem 3.2.1:*
+% 4. *Problem 3.2.1:*
 % Test observability:
 % A = [0 1; -2 -3], C = [1 0]
 % (a) Compute observability matrix O = [C; CA]
@@ -54,7 +55,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.2.2:*
+% 5. *Problem 3.2.2:*
 % For A = [-1 1; -2 0], C = [1 1]
 % (a) Compute observability matrix
 % (b) Check rank - is it observable?
@@ -65,7 +66,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.2.3:*
+% 6. *Problem 3.2.3:*
 % Multi-output system:
 % A = [0 1 0; 0 0 1; -1 -2 -3], C = [1 0 0; 0 1 0]
 % (a) Compute observability matrix O
@@ -77,7 +78,7 @@ rng(0);
 
 
 %% Exercise 3.3: PBH (Popov-Belevitch-Hautus) Test
-% *Problem 3.3.1:*
+% 7. *Problem 3.3.1:*
 % PBH Controllability Test:
 % A = [1 1; 0 2], B = [1; 1]
 % (a) Find eigenvalues of A
@@ -90,7 +91,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.3.2:*
+% 8. *Problem 3.3.2:*
 % PBH Observability Test:
 % A = [0 1; -4 -5], C = [1 1]
 % (a) Find eigenvalues of A
@@ -102,7 +103,7 @@ rng(0);
 
 
 %% Exercise 3.4: Controllability and Observability Gramians
-% *Problem 3.4.1:*
+% 9. *Problem 3.4.1:*
 % For A = [0 1; -1 -2], B = [0; 1], C = [1 0]
 % (a) Compute controllability gramian using gram()
 % (b) Find eigenvalues of Wc
@@ -113,7 +114,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.4.2:*
+% 10. *Problem 3.4.2:*
 % For the same system:
 % (a) Compute observability gramian using gram()
 % (b) Find eigenvalues of Wo
@@ -124,7 +125,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.4.3:*
+% 11. *Problem 3.4.3:*
 % Create an uncontrollable system:
 % A = [1 0; 0 2], B = [1; 0]
 % (a) Verify it's uncontrollable using rank test
@@ -136,7 +137,7 @@ rng(0);
 
 
 %% Exercise 3.5: Kalman Decomposition and Minimal Realization
-% *Problem 3.5.1:*
+% 12. *Problem 3.5.1:*
 % System with uncontrollable modes:
 % A = [-1 0 0; 0 -2 0; 0 0 -3], B = [1; 1; 0], C = [1 1 1]
 % (a) Check controllability using ctrb()
@@ -148,7 +149,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.5.2:*
+% 13. *Problem 3.5.2:*
 % Compare full and minimal realizations:
 % A = [0 1 0 0; -1 -1 0 0; 0 0 -2 1; 0 0 -3 -2]
 % B = [0; 1; 0; 0], C = [1 0 0 0]
@@ -161,7 +162,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.5.3:*
+% 14. *Problem 3.5.3:*
 % Pole-zero cancellation:
 % Create H(s) = (s+1)(s+2)/[(s+1)(s+3)(s+4)]
 % (a) Create transfer function
@@ -173,7 +174,7 @@ rng(0);
 
 
 %% Exercise 3.6: Canonical Forms
-% *Problem 3.6.1:*
+% 15. *Problem 3.6.1:*
 % Controllable Canonical Form:
 % A = [0 1; -6 -5], B = [0; 1], C = [1 0]
 % (a) Transform to controllable canonical form using canon()
@@ -185,7 +186,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.6.2:*
+% 16. *Problem 3.6.2:*
 % Observable Canonical Form:
 % For same system as 3.6.1
 % (a) Use duality: create dual system
@@ -197,7 +198,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.6.3:*
+% 17. *Problem 3.6.3:*
 % Modal (Diagonal) Canonical Form:
 % A = [0 1; -8 -6], B = [0; 1], C = [1 0]
 % (a) Transform to modal form using canon()
@@ -209,7 +210,7 @@ rng(0);
 
 
 %% Exercise 3.7: State-Space Transformations
-% *Problem 3.7.1:*
+% 18. *Problem 3.7.1:*
 % Given: A = [0 1; -2 -3], B = [0; 1], C = [1 1], D = 0
 % Transformation: T = [1 1; 0 1]
 % (a) Compute transformed system manually: Ā = TAT⁻¹, B̄ = TB, C̄ = CT⁻¹
@@ -221,7 +222,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.7.2:*
+% 19. *Problem 3.7.2:*
 % Diagonalization using eigenvectors:
 % A = [1 2; 3 4], B = [1; 0], C = [1 0]
 % (a) Find eigenvalues and eigenvectors of A
@@ -233,7 +234,7 @@ rng(0);
 
 
 %% Exercise 3.8: Balanced Realization
-% *Problem 3.8.1:*
+% 20. *Problem 3.8.1:*
 % System: A = [-1 0 0.5; 0 -2 0; 0 0 -5], B = [1; 0.5; 0.1], C = [1 1 0.5]
 % (a) Compute controllability and observability gramians
 % (b) Transform to balanced realization using balreal()
@@ -244,7 +245,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.8.2:*
+% 21. *Problem 3.8.2:*
 % Model reduction using balanced truncation:
 % For the system in 3.8.1
 % (a) Identify states with small Hankel singular values
@@ -257,7 +258,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.8.3:*
+% 22. *Problem 3.8.3:*
 % Fourth-order system:
 % A = [-1 0 0.5 0; 0 -2 0 0.3; 0 0 -5 0; 0 0 0 -10]
 % B = [1; 0.5; 0.2; 0.1], C = [1 1 0.5 0.1]
@@ -270,7 +271,7 @@ rng(0);
 
 
 %% Exercise 3.9: Combined Controllability and Observability
-% *Problem 3.9.1:*
+% 23. *Problem 3.9.1:*
 % Analyze all four structural properties:
 % A = [0 1; -2 -1], B = [0; 1], C = [1 0]
 % (a) Test controllability (rank method)
@@ -283,7 +284,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.9.2:*
+% 24. *Problem 3.9.2:*
 % System that is controllable but not observable:
 % A = [-1 0; 0 -2], B = [1; 1], C = [1 1]
 % (a) Verify controllability
@@ -295,7 +296,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.9.3:*
+% 25. *Problem 3.9.3:*
 % System that is observable but not controllable:
 % A = [0 1; 0 -1], B = [0; 0], C = [1 0]
 % (a) Check controllability - why does it fail?
@@ -307,7 +308,7 @@ rng(0);
 
 
 %% Exercise 3.10: Practical Applications
-% *Problem 3.10.1:*
+% 26. *Problem 3.10.1:*
 % Mass-spring-damper with partial state measurement:
 % A = [0 1; -4 -2], B = [0; 1], C = [1 0] (measure position only)
 % (a) Is the system controllable?
@@ -319,7 +320,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.10.2:*
+% 27. *Problem 3.10.2:*
 % DC Motor - analyze structural properties:
 % A = [-R/L -Kb/L; Kt/J -B/J], B = [1/L; 0], C = [0 1]
 % Use R=1, L=0.5, Kt=0.01, Kb=0.01, J=0.01, B=0.1
@@ -332,7 +333,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.10.3:*
+% 28. *Problem 3.10.3:*
 % Satellite attitude control:
 % States: [θ, θ̇, ψ, ψ̇] (two axes)
 % A = [0 1 0 0; 0 0 0 0; 0 0 0 1; 0 0 0 0]
@@ -345,7 +346,7 @@ rng(0);
 
 
 %% Exercise 3.11: Comprehensive Problems
-% *Problem 3.11.1:*
+% 29. *Problem 3.11.1:*
 % Complete structural analysis:
 % A = [0 1 0; 0 0 1; -1 -2 -1], B = [0; 0; 1], C = [1 0 0]
 % Perform complete analysis:
@@ -359,7 +360,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.11.2:*
+% 30. *Problem 3.11.2:*
 % Model reduction workflow:
 % Start with 5th-order system:
 % A = diag([-1, -2, -3, -10, -20]), B = ones(5,1), C = ones(1,5)
@@ -373,7 +374,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.11.3:*
+% 31. *Problem 3.11.3:*
 % Transfer function realization comparison:
 % H(s) = (s+2)/(s³+6s²+11s+6)
 % (a) Find poles and zeros
@@ -387,7 +388,7 @@ rng(0);
 
 
 %% 
-% *Problem 3.11.4:*
+% 32. *Problem 3.11.4:*
 % Design for controllability and observability:
 % Given A = [0 1; -4 -4], design B and C such that:
 % (a) System is controllable: try different B vectors

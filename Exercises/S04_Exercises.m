@@ -1,14 +1,15 @@
 %% Season 4 Exercises: Stability Analysis, State Feedback, and LQR
 close all; clear; clc;
 
-% Put the last 2 digits of your student number in the RNG function:
-rng(0);
+% Enter your FULL student number below (e.g., 400249049)
+STUDENT_NUMBER = 0;  % REPLACE THIS WITH YOUR STUDENT NUMBER
+rng(STUDENT_NUMBER);
 
 %%% Name :
 %%% Student number =
 
 %% Exercise 4.1: Stability Analysis - Eigenvalue Method
-% *Problem 4.1.1:*
+% 1. *Problem 4.1.1:*
 % Analyze stability using eigenvalues:
 % A = [-2 1; 0 -3]
 % (a) Compute eigenvalues of A
@@ -20,7 +21,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.1.2:*
+% 2. *Problem 4.1.2:*
 % For oscillatory system: A = [0 2; -2 0]
 % (a) Find eigenvalues
 % (b) Classify stability (stable/marginally stable/unstable)
@@ -31,7 +32,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.1.3:*
+% 3. *Problem 4.1.3:*
 % Third-order system: A = [-1 0 0; 0 0 1; 0 -4 -5]
 % (a) Compute all eigenvalues
 % (b) Check stability
@@ -42,7 +43,7 @@ rng(0);
 
 
 %% Exercise 4.2: Lyapunov Stability Analysis
-% *Problem 4.2.1:*
+% 4. *Problem 4.2.1:*
 % Test stability using Lyapunov equation:
 % A = [-1 0.5; -0.5 -2]
 % (a) Solve Lyapunov equation A^TP + PA + Q = 0 with Q = I
@@ -54,7 +55,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.2.2:*
+% 5. *Problem 4.2.2:*
 % For unstable system: A = [1 2; 0 0.5]
 % (a) Try solving Lyapunov equation with Q = I
 % (b) Check eigenvalues of resulting P
@@ -65,7 +66,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.2.3:*
+% 6. *Problem 4.2.3:*
 % Discrete-time Lyapunov equation:
 % A_d = [0.8 0.1; -0.1 0.9]
 % (a) Solve discrete Lyapunov equation using dlyap()
@@ -77,7 +78,7 @@ rng(0);
 
 
 %% Exercise 4.3: Matrix Definiteness
-% *Problem 4.3.1:*
+% 7. *Problem 4.3.1:*
 % Test positive definiteness:
 % M = [4 1; 1 3]
 % (a) Compute eigenvalues - are they all positive?
@@ -89,7 +90,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.3.2:*
+% 8. *Problem 4.3.2:*
 % For matrix M = [1 2; 2 1]
 % (a) Try Cholesky decomposition
 % (b) Check eigenvalues
@@ -100,7 +101,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.3.3:*
+% 9. *Problem 4.3.3:*
 % Test multiple matrices:
 % M1 = [2 -1; -1 2], M2 = [1 2; 2 1], M3 = [3 0; 0 3]
 % (a) For each matrix, compute eigenvalues
@@ -112,7 +113,7 @@ rng(0);
 
 
 %% Exercise 4.4: BIBO Stability
-% *Problem 4.4.1:*
+% 10. *Problem 4.4.1:*
 % Transfer function analysis:
 % H(s) = 1/(s² + 3s + 2)
 % (a) Create transfer function
@@ -124,7 +125,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.4.2:*
+% 11. *Problem 4.4.2:*
 % Compare stable vs unstable:
 % H1(s) = (s+1)/(s²+4s+3)
 % H2(s) = (s+1)/(s²-4s+3)
@@ -137,7 +138,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.4.3:*
+% 12. *Problem 4.4.3:*
 % System with pole-zero cancellation:
 % H(s) = (s+2)/(s²+3s+2)
 % (a) Factor numerator and denominator
@@ -149,7 +150,7 @@ rng(0);
 
 
 %% Exercise 4.5: State Feedback - Pole Placement
-% *Problem 4.5.1:*
+% 13. *Problem 4.5.1:*
 % Design state feedback controller:
 % A = [0 1; -2 -3], B = [0; 1]
 % Desired poles: [-4, -5]
@@ -162,7 +163,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.5.2:*
+% 14. *Problem 4.5.2:*
 % Stabilize unstable system:
 % A = [1 1; 0 2], B = [0; 1]
 % (a) Find open-loop eigenvalues - is it stable?
@@ -174,7 +175,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.5.3:*
+% 15. *Problem 4.5.3:*
 % Third-order system:
 % A = [0 1 0; 0 0 1; -1 -2 -3], B = [0; 0; 1]
 % Desired poles: [-2, -3+2i, -3-2i]
@@ -187,7 +188,7 @@ rng(0);
 
 
 %% Exercise 4.6: Ackermann's Formula
-% *Problem 4.6.1:*
+% 16. *Problem 4.6.1:*
 % Use Ackermann's formula:
 % A = [0 1; -6 -5], B = [0; 1]
 % Desired poles: [-2, -3]
@@ -200,7 +201,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.6.2:*
+% 17. *Problem 4.6.2:*
 % For system: A = [1 1; 1 2], B = [1; 0]
 % (a) Use acker() with poles at [-1, -4]
 % (b) Verify controllability first
@@ -211,7 +212,7 @@ rng(0);
 
 
 %% Exercise 4.7: LQR - Linear Quadratic Regulator
-% *Problem 4.7.1:*
+% 18. *Problem 4.7.1:*
 % Basic LQR design:
 % A = [0 1; -1 -0.5], B = [0; 1]
 % Q = eye(2), R = 1
@@ -224,7 +225,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.7.2:*
+% 19. *Problem 4.7.2:*
 % Effect of Q matrix:
 % Same system as 4.7.1
 % (a) Design LQR with Q = diag([1, 1])
@@ -237,7 +238,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.7.3:*
+% 20. *Problem 4.7.3:*
 % Effect of R matrix:
 % A = [0 1; -2 -1], B = [0; 1], Q = diag([10, 1])
 % (a) Design with R = 0.1 (cheap control)
@@ -250,7 +251,7 @@ rng(0);
 
 
 %% Exercise 4.8: Riccati Equation
-% *Problem 4.8.1:*
+% 21. *Problem 4.8.1:*
 % Solve CARE directly:
 % A = [0 1; -2 -3], B = [0; 1], Q = eye(2), R = 1
 % (a) Solve using care()
@@ -262,7 +263,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.8.2:*
+% 22. *Problem 4.8.2:*
 % Check properties of P:
 % For same system as 4.8.1
 % (a) Verify P is symmetric
@@ -274,7 +275,7 @@ rng(0);
 
 
 %% Exercise 4.9: Comprehensive Pole Placement
-% *Problem 4.9.1:*
+% 23. *Problem 4.9.1:*
 % Mass-spring-damper system:
 % A = [0 1; -4 -2], B = [0; 1] (force input)
 % (a) Find natural frequency and damping from A
@@ -286,7 +287,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.9.2:*
+% 24. *Problem 4.9.2:*
 % DC Motor control:
 % A = [-R/L -Kb/L; Kt/J -B/J], B = [1/L; 0]
 % Use: R=1, L=0.5, Kt=0.01, Kb=0.01, J=0.01, B=0.1
@@ -299,7 +300,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.9.3:*
+% 25. *Problem 4.9.3:*
 % Satellite attitude control:
 % A = [0 1; 0 0], B = [0; 1] (double integrator)
 % (a) Check controllability
@@ -311,7 +312,7 @@ rng(0);
 
 
 %% Exercise 4.10: LQR Applications
-% *Problem 4.10.1:*
+% 26. *Problem 4.10.1:*
 % Inverted pendulum on cart (linearized):
 % A = [0 1 0 0; 0 0 -m*g/M 0; 0 0 0 1; 0 0 (M+m)*g/(M*L) 0]
 % Use: m = 0.1, M = 1, L = 0.5, g = 9.81
@@ -325,7 +326,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.10.2:*
+% 27. *Problem 4.10.2:*
 % Compare pole placement vs LQR:
 % A = [0 1; -1 -1], B = [0; 1]
 % (a) Pole placement: place at [-2, -3]
@@ -338,7 +339,7 @@ rng(0);
 
 
 %% Exercise 4.11: Comprehensive Problems
-% *Problem 4.11.1:*
+% 28. *Problem 4.11.1:*
 % Complete stability analysis:
 % A = [-1 2; -2 -3]
 % (a) Eigenvalue-based stability test
@@ -350,7 +351,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.11.2:*
+% 29. *Problem 4.11.2:*
 % Design trade-off study:
 % A = [0 1; -2 -1], B = [0; 1]
 % (a) Design with LQR for 5 different Q matrices
@@ -362,7 +363,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.11.3:*
+% 30. *Problem 4.11.3:*
 % Stabilization challenge:
 % A = [2 1 0; 0 1 1; 0 0 -1], B = [1; 0; 1]
 % (a) Check open-loop stability
@@ -375,7 +376,7 @@ rng(0);
 
 
 %% 
-% *Problem 4.11.4:*
+% 31. *Problem 4.11.4:*
 % Robustness analysis:
 % A = [0 1; -2 -3], B = [0; 1]
 % Design K with desired poles at [-4, -5]
